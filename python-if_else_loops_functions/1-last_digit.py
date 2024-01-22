@@ -2,7 +2,7 @@
 import random
 number = random.randint(-10000, 10000)
 last_digit = abs(number) % 10 * (-1 if number < 0 else 1)
-print("Last digit of", end=" ")
+print("Last digit of ", end="")
 if last_digit > 5:
     print(f"{number} is {last_digit} and is grater than 5")
 elif last_digit == 0:
