@@ -1,3 +1,9 @@
 #!/usr/bin/python3
 def uppercase(str):
-    return ''.join([chr(ord(char) - 32) for char in str if ord(char) >= 65])
+	for char in str:
+		if ord(char) >= 97 and ord(char) <= 122:
+			char = chr(ord(char) - 32)
+		print("{}".format(char), end="")
+	print()
+uppercase("best")
+uppercase("Best School 98 Battery street")
