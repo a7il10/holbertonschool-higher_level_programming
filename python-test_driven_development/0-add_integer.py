@@ -1,17 +1,33 @@
 #!/usr/bin/python3
-"""
-    Insert here module comment
-"""
+
+'''
+
+ Simple module to test doctest module for test autmoatizaton
+ for the below function which adds two integers
+ this is only for learning puproses
+'''
 
 
 def add_integer(a, b=98):
-    """ add two integers or flots """
-    if type(a) is not int and type(a) is not float:
+
+    '''
+    Simple function that adds two integers
+
+    Args:
+        a (int) : an integer value
+        b (int) : an integer value set to 98 by default
+
+    Return:
+        Addition of the two arguments
+
+    Raises:
+        TypeError: if a or b is not a integer or if function is called
+                   with less than or more than 2 arguments
+    '''
+
+    if type(a) not in [int, float]:
         raise TypeError("a must be an integer")
-    if type(b) is not int and type(b) is not float:
+    if type(b) not in [int, float]:
         raise TypeError("b must be an integer")
-    if type(a) is float:
-        a = int(a)
-    if type(b) is float:
-        b = int(b)
-    return (a + b)
+
+    return int(a) + int(b)
