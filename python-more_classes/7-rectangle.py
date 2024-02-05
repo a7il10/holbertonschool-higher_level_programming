@@ -54,8 +54,8 @@ class Rectangle:
             return print_str
         else:
             for h in range(self.height - 1):
-                print_str += self.print_symbol * self.width + "\n"
-            print_str += self.print_symbol * self.width
+                print_str += Rectangle.print_symbol * self.width + "\n"
+            print_str += Rectangle.print_symbol * self.width
             return print_str
 
     def __repr__(self):
@@ -64,5 +64,3 @@ class Rectangle:
     def __del__(self):
         Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
-
-    
