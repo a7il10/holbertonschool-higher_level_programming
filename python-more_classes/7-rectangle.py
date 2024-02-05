@@ -54,8 +54,8 @@ class Rectangle:
             return print_str
         else:
             for h in range(self.height - 1):
-                print_str += Rectangle.print_symbol * self.width + "\n"
-            print_str += Rectangle.print_symbol * self.width
+                print_str += str(self.print_symbol) * self.width + "\n"
+            print_str += str(self.print_symbol) * self.width
             return print_str
 
     def __repr__(self):
