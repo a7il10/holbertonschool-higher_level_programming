@@ -4,6 +4,6 @@
 
 def write_file(filename="", text=""):
     """function that reads a text file (UTF8) and prints it to stdout"""
-    with open(filename, 'r', encoding='utf-8') as file:
-        text = file.read()
+    with open(filename, 'w', encoding='utf-8') as file:
+        file.write(text)
     return len(text)
