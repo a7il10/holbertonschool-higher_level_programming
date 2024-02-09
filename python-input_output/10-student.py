@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-"""class Student that defines a student by: (based on 9-student.py)"""
+'''input/output'''
 
 
 class Student:
-    """class Student"""
+    '''Student'''
     def __init__(self, first_name, last_name, age):
         self.first_name = first_name
         self.last_name = last_name
@@ -16,4 +16,4 @@ class Student:
         for key in attrs:
             if key in self.__dict__:
                 new_dict[key] = self.__dict__[key]
-            return new_dict
+        return new_dict
