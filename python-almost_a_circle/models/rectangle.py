@@ -2,6 +2,17 @@
 """Write the class Rectangle that inherits from Base"""
 
 
+class Base:
+    """Write the first class Base"""
+    __nb_objects = 0
+
+    def __init__(self, id=None):
+        if id is not None:
+            self.id = id
+        else:
+            Base.__nb_objects += 1
+            self.id = Base.__nb_objects
+
 class Rectangle(Base):
     """Write the class Rectangle that inherits from Base"""
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -32,7 +43,7 @@ class Rectangle(Base):
         return self.__x
 
     @x.setter
-    def __x(self, value):
+    def x(self, value):
         self.__x = value
 
     @property
@@ -40,5 +51,5 @@ class Rectangle(Base):
         return self.__y
 
     @y.setter
-    def __y(self, value):
+    def y(self, value):
         self.__y = value
