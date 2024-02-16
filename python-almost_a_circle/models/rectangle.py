@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-"""Write the class Rectangle that inherits from Base"""
+'''Class Rectangle inherits from Base'''
 from .base import Base
 
 
 class Rectangle(Base):
-    """Write the class Rectangle that inherits from Base"""
+    '''Class Rectangle'''
     def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
         self.width = width
@@ -17,81 +17,77 @@ class Rectangle(Base):
         return self.__width
 
     @width.setter
-    def width(self, value):
-        if not isinstance(value, int):
+    def width(self, new_width):
+        if not isinstance(new_width, int):
             raise TypeError("width must be an integer")
-        if value <= 0:
+        elif new_width <= 0:
             raise ValueError("width must be > 0")
-        self.__width = value
+        self.__width = new_width
 
     @property
     def height(self):
         return self.__height
 
     @height.setter
-    def height(self, value):
-        if not isinstance(value, int):
+    def height(self, new_height):
+        if not isinstance(new_height, int):
             raise TypeError("height must be an integer")
-        if value <= 0:
+        elif new_height <= 0:
             raise ValueError("height must be > 0")
-        self.__height = value
+        self.__height = new_height
 
     @property
     def x(self):
         return self.__x
 
     @x.setter
-    def x(self, value):
-        if not isinstance(value, int):
+    def x(self, new_x):
+        if not isinstance(new_x, int):
             raise TypeError("x must be an integer")
-        if value < 0:
+        elif new_x < 0:
             raise ValueError("x must be >= 0")
-        self.__x = value
+        self.__x = new_x
 
     @property
     def y(self):
         return self.__y
 
     @y.setter
-    def y(self, value):
-        if not isinstance(value, int):
+    def y(self, new_y):
+        if not isinstance(new_y, int):
             raise TypeError("y must be an integer")
-        if value < 0:
+        elif new_y < 0:
             raise ValueError("y must be >= 0")
-        self.__y = value
+        self.__y = new_y
 
     def area(self):
-        """area of the rectangle"""
-        return self.__height * self.__width
+        '''Area of Rectangle'''
+        return self.__width * self.__height
 
     def display(self):
-        """display"""
-        for el in range(self.y):
+        '''Print Rectangle with #'''
+        for _ in range(self.y):
             print()
-        for el in range(self.height):
+        for _ in range(self.height):
             print(" " * self.x, end="")
             print("#" * self.width)
 
     def __str__(self):
-        """str"""
+        '''Display Rectangle'''
         return (f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - "
                 f"{self.__width}/{self.__height}")
 
     def update(self, *args, **kwargs):
-        '''update rectangle'''
-        attributes = ['id', 'width', 'height', 'x', 'y']
-        for i in range(len(args)):
-            if i < len(attributes):
+        '''Assigns an argument to each attribute'''
+        if len(args) > 0:
+            attributes = ['id', 'width', 'height', 'x', 'y']
+            for i in range(len(args)):
                 setattr(self, attributes[i], args[i])
-        for key, value in kwargs.items():
-            setattr(self, key, value)
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
 
     def to_dictionary(self):
-        """to dictionary"""
-        return {
-            'id': self.id,
-            'width': self.__width,
-            'height': self.__height,
-            'x': self.__x,
-            'y': self.__y
-        }
+        '''Return the dictionary representation of a square'''
+        return {'x': self.__x, 'width': self.__width, 'id': self.id,
+                'height': self.__height, 'y': self.__y}
